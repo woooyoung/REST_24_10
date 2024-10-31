@@ -49,7 +49,7 @@ public class Api1MemberController {
     @AllArgsConstructor
     @Getter
     public static class MeResponse {
-        private final Member member;
+        private final MemberDto member;
     }
 
     //consumes = ALL_VALUE -> Json 형태로 입력받는게 필수가 아니다.
@@ -59,7 +59,7 @@ public class Api1MemberController {
 
         return RsData.of("S-1",
                 "성공",
-                new MeResponse(member)
+                new MeResponse(MemberDto.of(member))
         );
     }
 
